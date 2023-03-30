@@ -1,0 +1,470 @@
+@import "./variables.css";
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  background: linear-gradient(to bottom, var(--dark), transparent);
+  padding: 15px 0;
+  transition: 0.5s ease all;
+}
+.header.sticky {
+  padding: 0;
+  background: var(--dark);
+}
+.header .navbar-toggler {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  background: var(--primary);
+  color: var(--dark);
+  border-radius: 0;
+}
+.header .navbar-brand {
+  width: 150px;
+  border-left: 5px solid var(--primary);
+  padding-left: 15px;
+}
+.header .navbar-brand h1 {
+  font-size: 25px;
+  font-family: var(--sans-serif-alt);
+  color: var(--light);
+}
+.header .navbar-brand h1 span {
+  display: block;
+  font-size: 18px;
+  color: var(--primary);
+}
+.header .brochure-btn {
+  width: 150px;
+  text-align: center;
+  border: 2px solid var(--primary);
+  outline: 0;
+  padding: 7px 15px;
+  background: transparent;
+  color: var(--light);
+}
+.header .nav-link {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--light);
+  transition: 0.5s ease all;
+}
+.header .nav-link.active {
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero .carousel,
+.hero .carousel .carousel-inner,
+.hero .carousel .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hero .carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: radial-gradient(#000000ba, #0e0d0da3);
+}
+.hero .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hero .text h2 {
+  font-size: 80px;
+  font-family: var(--sans-serif-alt);
+  color: var(--light);
+}
+.hero .text h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--primary);
+}
+.hero .text h5 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--light);
+}
+.hero .text h5 b {
+  display: block;
+  font-size: 35px;
+  font-family: var(--sans-serif-alt);
+  color: var(--primary);
+  margin-top: 10px;
+}
+
+/* About Section */
+.about .tag {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--primary);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.about .tag .title {
+  width: 200px;
+  text-align: center;
+  padding: 15px;
+  background: var(--primary);
+}
+.about .tag .title h5 {
+  font-size: 30px;
+  font-family: var(--sans-serif-alt);
+  color: var(--dark);
+}
+.about .tag .title h5 b {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+}
+.about .tag .desc {
+  width: calc(100% - 215px);
+  text-align: center;
+}
+.about .tag .desc p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light-alt);
+}
+.about .tag .desc p b {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 5px;
+}
+
+/* Amenities */
+.amenities .items {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+.amenities .items .item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.amenities .items .item img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  transition: 0.5s ease all;
+}
+.amenities .items .item:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+.amenities .items .item .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000ba;
+  transition: 0.5s ease all;
+}
+.amenities .items .item:hover .text {
+  background: #0404065e;
+}
+.amenities .items .item h5 {
+  font-size: 30px;
+  font-family: var(--sans-serif-alt);
+  color: var(--light);
+}
+
+/* COnfiguration  */
+.config .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.config .cards .card {
+  border-radius: 0;
+  border: 0;
+  background: var(--dark-alt);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  text-align: center;
+}
+.config .cards .card h6 {
+  font-size: 30px;
+  font-family: var(--sans-serif-alt);
+  color: var(--primary);
+}
+
+/* Location */
+.location {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 700px;
+}
+.location .image {
+  width: 60%;
+  overflow: hidden;
+}
+.location .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+.location .text {
+  padding: 50px;
+  width: 40%;
+}
+.location .text ul {
+  position: relative;
+}
+.location .text ul::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 35px;
+  width: 1px;
+  height: 100%;
+  border-left: 2px dashed var(--primary);
+}
+.location .text ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+.location .text ul li:last-of-type {
+  margin-bottom: 0;
+}
+.location .text ul li span {
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  font-size: 30px;
+  font-family: var(--sans-serif-alt);
+  text-align: center;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.location .text ul li span i {
+  display: block;
+  line-height: 16px;
+  font-size: 16px;
+  font-style: normal;
+}
+.location .text ul li p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Contact */
+.contact .form-control {
+  background: var(--dark-alt);
+  border-radius: 0;
+  border: 1px solid var(--primary);
+  color: var(--light);
+}
+.contact .form-control:focus {
+  box-shadow: 0 0 0 0.25rem #ffc4512e;
+}
+.contact label {
+  color: var(--light);
+}
+.contact label span {
+  color: var(--primary);
+}
+.contact button {
+  height: 58px;
+}
+.contact .map {
+  width: 100%;
+  height: 400px;
+}
+.contact .map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--dark-alt);
+  padding: 30px 0;
+  background: var(--dark);
+  text-align: center;
+}
+
+/* Enquiry Modal */
+.enquiry-modal .modal-body {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  background: var(--dark);
+  border-radius: 0;
+  position: relative;
+}
+.enquiry-modal .dismiss-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: var(--primary);
+  color: var(--dark);
+}
+.enquiry-modal form {
+  width: 60%;
+  padding: 30px;
+  border: 1px solid var(--primary);
+}
+.enquiry-modal form h4 {
+  font-size: 30px;
+  font-family: var(--sans-serif-alt);
+  color: var(--primary);
+  text-transform: capitalize;
+
+  line-height: 150%;
+}
+.enquiry-modal form label {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light);
+}
+.enquiry-modal form label span {
+  color: var(--primary);
+}
+.enquiry-modal form .form-control:focus ~ label {
+  color: var(--dark);
+}
+.enquiry-modal form .form-control:focus ~ label span {
+  color: var(--primary);
+}
+.enquiry-modal form .form-control {
+  border-radius: 0;
+  background: var(--dark-alt);
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  transition: 0.5s ease all;
+  color: var(--light);
+}
+.enquiry-modal form .form-control:focus {
+  background: var(--light);
+  color: var(--dark);
+}
+.enquiry-modal .image {
+  width: 40%;
+}
+.enquiry-modal .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1199px) {
+  .header .navbar-collapse {
+    padding-top: 30px;
+  }
+  .location {
+    display: block;
+  }
+  .location .image,
+  .location .text {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .enquiry-modal .image {
+    display: none;
+  }
+  .enquiry-modal form {
+    width: 100%;
+  }
+  .amenities .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .g-5,
+  .gx-5 {
+    --bs-gutter-x: 0 !important;
+  }
+  .hero .text h2 {
+    font-size: 50px;
+  }
+  .about .tag {
+    flex-direction: column;
+  }
+  .about .tag .title,
+  .about .tag .desc {
+    width: 100%;
+    padding: 15px;
+  }
+  .amenities .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .amenities .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .config .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .location .text {
+    padding: 15px;
+  }
+}
